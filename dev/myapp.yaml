@@ -18,5 +18,5 @@ spec:
       - name: maven-app
         image: fomawill/java-maven-app:1.7
         ports:
-        - containerPort: 8080
+        - containerPort: 8084
 
