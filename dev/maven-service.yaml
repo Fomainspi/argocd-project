@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: maven-service
 spec:
-  type: Loadbancer
+  type: Loadbalancer
   selector:
     app: maven-app
   ports:
