@@ -8,14 +8,24 @@ spec:
 
   source:
     repoURL: https://github.com/Fomainspi/argocd-project
-    targetRevision: HEAD
-    path: dev
+    targetRevision: main     # Pin to a branch or tag rather than HEAD
+    path: dev                # Must contain valid manifests / Kustomize / Helm
 
   destination:
-    server: https://kubernetes.default.svc
+    server: https://kubernetes.default.svc   # In-cluster
     namespace: webapp
 
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true  # Auto-create 'webapp' if it doesn't exist
+    retry:
+      limit: 3
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m
+
+  revisionHistoryLimit: 5
