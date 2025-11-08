@@ -4,7 +4,7 @@ metadata:
   name: maven-service
   namespace: webapp
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: maven-app
   ports:

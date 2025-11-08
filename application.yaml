@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/Fomainspi/argocd-project
+    repoURL: https://github.com/Fomainspi/argocd-project.git
     targetRevision: main     # Pin to a branch or tag rather than HEAD
     path: dev                # Must contain valid manifests / Kustomize / Helm
 
